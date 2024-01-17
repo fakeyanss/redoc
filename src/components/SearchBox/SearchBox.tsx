@@ -115,9 +115,9 @@ export class SearchBox extends React.PureComponent<SearchBoxProps, SearchBoxStat
   }
 
   search = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { minCharacterLengthToInitSearch } = this.context;
+    // const { minCharacterLengthToInitSearch } = this.context;
     const q = event.target.value;
-    if (q.length < minCharacterLengthToInitSearch) {
+    if (q.trim().length < 2) {
       this.clearResults(q);
       return;
     }
