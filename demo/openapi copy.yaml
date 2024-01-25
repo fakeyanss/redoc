@@ -59,12 +59,6 @@ externalDocs:
 tags:
   - name: pet
     description: Everything about your Pets
-  - name: pet/pet1111111
-    x-displayName: pet1111111
-  - name: pet/pet2222222
-    x-displayName: pet2222222
-  - name: pet/pet2222222/pet21111111
-    x-displayName: pet21111111
   - name: store
     description: Access to Petstore orders
   - name: user
@@ -77,18 +71,18 @@ tags:
     x-displayName: The Order Model
     description: |
       <SchemaDefinition schemaRef="#/components/schemas/Order" exampleRef="#/components/examples/Order" showReadOnly={true} showWriteOnly={true} />
-# x-tagGroups:
-#   - name: General
-#     tags:
-#       - pet
-#       - store
-#   - name: User Management
-#     tags:
-#       - user
-#   - name: Models
-#     tags:
-#       - pet_model
-#       - store_model
+x-tagGroups:
+  - name: General
+    tags:
+      - pet
+      - store
+  - name: User Management
+    tags:
+      - user
+  - name: Models
+    tags:
+      - pet_model
+      - store_model
 security:
   - {}
 paths:
@@ -111,7 +105,7 @@ paths:
           format: int64
     post:
       tags:
-        - pet/pet1111111
+        - pet
       # summary: Add a new pet to the store
       summary: 宠物中文测试
       description: Add new pet to the store inventory.
@@ -156,7 +150,7 @@ paths:
         $ref: '#/components/requestBodies/Pet'
     put:
       tags:
-        - pet/pet1111111
+        - pet
       summary: Update an existing pet
       description: ''
       operationId: updatePet
@@ -189,7 +183,7 @@ paths:
   '/pet/{petId}':
     get:
       tags:
-        - pet/pet1111111
+        - pet
       summary: Find pet by ID
       description: Returns a single pet
       operationId: getPetById
@@ -220,7 +214,7 @@ paths:
         - api_key: []
     post:
       tags:
-        - pet/pet1111111
+        - pet
       summary: Updates a pet in the store with form data
       description: ''
       operationId: updatePetWithForm
@@ -253,7 +247,7 @@ paths:
                   type: string
     delete:
       tags:
-        - pet/pet2222222
+        - pet
       summary: Deletes a pet
       description: ''
       operationId: deletePet
@@ -281,7 +275,7 @@ paths:
   '/pet/{petId}/uploadImage':
     post:
       tags:
-        - pet/pet2222222
+        - pet
       summary: uploads an image
       description: ''
       operationId: uploadFile
@@ -313,7 +307,7 @@ paths:
   /pet/findByStatus:
     get:
       tags:
-        - pet/pet2222222
+        - pet
       summary: Finds Pets by status
       description: Multiple status values can be provided with comma separated strings
       operationId: findPetsByStatus
@@ -357,7 +351,7 @@ paths:
   /pet/findByTags:
     get:
       tags:
-        - pet/pet2222222/pet21111111
+        - pet
       summary: Finds Pets by tags
       description: >-
         Multiple tags can be provided with comma separated strings. Use tag1,
@@ -917,7 +911,7 @@ components:
         message:
           type: string
     Cat:
-      # 'x-tags': ['pet']
+      'x-tags': ['pet']
       description: A representation of a cat
       allOf:
         - $ref: '#/components/schemas/Pet'
@@ -1229,7 +1223,7 @@ x-webhooks:
       description: Information about a new pet in the systems
       operationId: newPet
       tags:
-        - pet/pet2222222/pet21111111
+        - pet
       requestBody:
         content:
           application/json:

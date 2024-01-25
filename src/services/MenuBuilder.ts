@@ -120,6 +120,7 @@ export class MenuBuilder {
     });
 
     const res: Array<GroupModel | OperationModel> = [];
+    const resMap: { [name: string]: GroupModel } = {};
     for (const tag of tags) {
       if (!tag) {
         continue;
@@ -149,7 +150,34 @@ export class MenuBuilder {
         ...this.getOperationsItems(parser, item, tag, item.depth + 1, options),
       ];
 
-      res.push(item);
+      const slashCount = tag.name.split('/').length - 1;
+      if (slashCount > 0) {
+        const rootTagname = tag.name.substring(0, tag.name.indexOf('/'));
+        const rootItem = resMap[rootTagname];
+        let parentItem;
+        const parentTagNames = tag.name.split('/');
+        for (let i = 0; i < slashCount; i++) {
+          if (i == 0) {
+            parentItem = rootItem;
+          } else {
+            parentItem = <GroupModel>(
+              parentItem.items.filter(it => it.name === parentTagNames[i])[0]
+            );
+          }
+        }
+        item.parent = parentItem;
+        parentItem.items.push(item);
+        // reset depthes for items
+        for (const it of parentItem.items) {
+          it.depth = parentItem.depth + 1;
+        }
+        for (const it of item.items) {
+          it.depth = item.depth + 1;
+        }
+      } else {
+        res.push(item);
+        resMap[tag.name] = item;
+      }
     }
 
     if (options.sortTagsAlphabetically) {

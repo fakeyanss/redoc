@@ -1,4 +1,4 @@
-import slugify from 'slugify';
+// import slugify from 'slugify';
 
 /**
  * Maps over array passing `isLast` bool to iterator as the second argument
@@ -122,7 +122,7 @@ const isMergebleObject = (item): boolean => {
  */
 export function safeSlugify(value: string): string {
   return (
-    slugify(value) ||
+    // slugify(value) ||
     value
       .toString()
       .toLowerCase()

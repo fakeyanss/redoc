@@ -119,6 +119,33 @@ export const menuItemDepth = {
     font-size: 0.929em;
     text-transform: ${({ theme }) => theme.sidebar.level1Items.textTransform};
   `,
+  2: css`
+    padding-left: ${20 + 10}px;
+  `,
+  3: css`
+    padding-left: ${20 + 10 * 2}px;
+  `,
+  4: css`
+    padding-left: ${20 + 10 * 3}px;
+  `,
+  5: css`
+    padding-left: ${20 + 10 * 4}px;
+  `,
+  6: css`
+    padding-left: ${20 + 10 * 5}px;
+  `,
+  7: css`
+    padding-left: ${20 + 10 * 6}px;
+  `,
+  8: css`
+    padding-left: ${20 + 10 * 7}px;
+  `,
+  9: css`
+    padding-left: ${20 + 10 * 8}px;
+  `,
+  10: css`
+    padding-left: ${20 + 10 * 9}px;
+  `,
 };
 
 export interface MenuItemLabelType {
