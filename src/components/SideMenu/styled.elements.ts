@@ -111,42 +111,22 @@ export const menuItemDepth = {
   0: css`
     opacity: 0.7;
     text-transform: ${({ theme }) => theme.sidebar.groupItems.textTransform};
-    font-size: 0.8em;
+    font-size: 0.9em !important;
     padding-bottom: 0;
     cursor: default;
   `,
   1: css`
-    font-size: 0.929em;
+    font-size: 14px !important;
     text-transform: ${({ theme }) => theme.sidebar.level1Items.textTransform};
   `,
-  2: css`
-    padding-left: ${20 + 10}px;
-  `,
-  3: css`
-    padding-left: ${20 + 10 * 2}px;
-  `,
-  4: css`
-    padding-left: ${20 + 10 * 3}px;
-  `,
-  5: css`
-    padding-left: ${20 + 10 * 4}px;
-  `,
-  6: css`
-    padding-left: ${20 + 10 * 5}px;
-  `,
-  7: css`
-    padding-left: ${20 + 10 * 6}px;
-  `,
-  8: css`
-    padding-left: ${20 + 10 * 7}px;
-  `,
-  9: css`
-    padding-left: ${20 + 10 * 8}px;
-  `,
-  10: css`
-    padding-left: ${20 + 10 * 9}px;
-  `,
 };
+
+for (let i = 2; i < 100; i++) {
+  menuItemDepth[i] = css`
+    font-size: 14px !important;
+    padding-left: ${20 + 10 * i - 1}px;
+  `;
+}
 
 export interface MenuItemLabelType {
   $depth: number;
