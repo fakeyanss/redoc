@@ -1,6 +1,6 @@
 {
   "name": "@fakeyanss/redoc",
-  "version": "2.1.8",
+  "version": "2.1.16",
   "description": "ReDoc",
   "repository": {
     "type": "git",
@@ -140,7 +140,7 @@
     "styled-components": "^4.1.1 || ^5.1.1 || ^6.0.5"
   },
   "dependencies": {
-    "@redocly/openapi-core": "^1.0.0-rc.2",
+    "@fakeyanss/redocly-openapi-core": "1.6.3",
     "classnames": "^2.3.1",
     "decko": "^1.2.0",
     "dompurify": "^2.2.8",

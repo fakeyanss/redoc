@@ -1,4 +1,4 @@
-import { parseYaml } from '@redocly/openapi-core';
+import { parseYaml } from '@fakeyanss/redocly-openapi-core';
 import { outdent } from 'outdent';
 
 import { ResponseModel } from '../../models/Response';

@@ -154,6 +154,10 @@ const defaultTheme: ThemeInterface = {
       size: '1.5em',
       color: theme => theme.sidebar.textColor,
     },
+    collapseBtn: {
+      active: true,
+      top: '50%',
+    },
   },
   logo: {
     maxHeight: ({ sidebar }) => sidebar.width,
@@ -358,6 +362,10 @@ export interface ResolvedThemeInterface {
     arrow: {
       size: string;
       color: string;
+    };
+    collapseBtn: {
+      active: boolean;
+      top: string;
     };
   };
   logo: {

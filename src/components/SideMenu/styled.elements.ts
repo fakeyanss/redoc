@@ -124,7 +124,7 @@ export const menuItemDepth = {
 for (let i = 2; i < 100; i++) {
   menuItemDepth[i] = css`
     font-size: 14px !important;
-    padding-left: ${20 + 10 * i - 1}px;
+    padding-left: ${20 + 10 * (i - 1)}px;
   `;
 }
 

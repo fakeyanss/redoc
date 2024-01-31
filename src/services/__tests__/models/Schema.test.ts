@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { parseYaml } from '@redocly/openapi-core';
+import { parseYaml } from '@fakeyanss/redocly-openapi-core';
 import { outdent } from 'outdent';
 import { MediaTypeModel } from '../../models';
 import { SchemaModel } from '../../models/Schema';

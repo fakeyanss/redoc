@@ -1,5 +1,5 @@
 import outdent from 'outdent';
-import { parseYaml } from '@redocly/openapi-core';
+import { parseYaml } from '@fakeyanss/redocly-openapi-core';
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { SchemaModel } from '../../models';
